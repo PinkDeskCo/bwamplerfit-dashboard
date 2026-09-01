@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Participant | BWamplerFit</title>
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/variables.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/base.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/layout.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+    <link
+        rel="stylesheet"
+        href="./participant.css"
+    >
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar">
+
+           <div class="admin-sidebar__brand">
+
+            <div class="admin-sidebar__brand-mark">
+
+                <span class="admin-sidebar__spark">
+                    ✦
+                </span>
+
+                <span class="admin-sidebar__brand-name">
+                    BWamplerFit
+                </span>
+
+                <span class="admin-sidebar__spark">
+                    ✦
+                </span>
+
+            </div>
+
+    <p class="admin-sidebar__title">
+        Challenge Dashboard
+    </p>
+
+</div>
+
+            <nav
+                class="admin-nav"
+                aria-label="Admin navigation"
+            >
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="admin-nav__link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="../participants/participants.html"
+                    class="admin-nav__link"
+                >
+                    Participants
+                </a>
+
+            </nav>
+
+            <div class="admin-sidebar__footer">
+
+                <button
+                    type="button"
+                    class="admin-signout"
+                    id="logout-button"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="admin-main">
+
+            <div class="participant-page">
+
+                <a
+                    href="#"
+                    class="participant-back-link"
+                    id="challenge-back-link"
+                >
+                    ← Back to Challenge
+                </a>
+
+
+                <header class="participant-header">
+
+                    <div>
+
+                        <p class="participant-header__eyebrow">
+                            Participant
+                        </p>
+
+                        <h1
+                            class="participant-header__title"
+                            id="participant-email"
+                        >
+                            Loading participant...
+                        </h1>
+
+                        <p
+                            class="participant-header__challenge"
+                            id="participant-challenge"
+                        >
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="participant-status"
+                        id="participant-status"
+                    >
+                    </span>
+
+                </header>
+
+                <section class="participant-summary"
+                    aria-label="Participant progress summary"
+                >
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Progress
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="participant-percentage"
+                        >
+                            —
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Activities
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="participant-activities"
+                        >
+                            —
+                        </p>
+
+                        <p class="summary-card__support">
+                            Completed
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Started
+                        </p>
+
+                        <p
+                            class="summary-card__date"
+                            id="participant-started"
+                        >
+                            —
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="participant-progress-section">
+
+                        <div class="section-heading">
+
+                            <div>
+
+                                <p class="section-heading__eyebrow">
+                                    Challenge Progress
+                                </p>
+
+                                <h2 class="section-heading__title">
+                                    30-Day Activity Map
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="progress-map-panel">
+
+                            <div class="progress-map-summary">
+
+                                <div>
+
+                                    <span
+                                        class="progress-map-summary__value"
+                                        id="active-days-completed"
+                                    >
+                                        —
+                                    </span>
+
+                                    <span class="progress-map-summary__label">
+                                        Active Days Completed
+                                    </span>
+
+                                </div>
+
+                                <div>
+
+                                    <span
+                                        class="progress-map-summary__value"
+                                        id="rest-days"
+                                    >
+                                        —
+                                    </span>
+
+                                    <span class="progress-map-summary__label">
+                                        Rest Days
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="progress-map"
+                                id="progress-map"
+                            >
+                                Loading progress...
+                            </div>
+
+                            <div class="progress-map-legend">
+
+                                <span>
+                                    <i class="progress-map-legend__dot is-complete"></i>
+                                    Complete
+                                </span>
+
+                                <span>
+                                    <i class="progress-map-legend__dot is-partial"></i>
+                                    Partial
+                                </span>
+
+                                <span>
+                                    <i class="progress-map-legend__dot is-empty"></i>
+                                    Not Started
+                                </span>
+
+                                <span>
+                                    <i class="progress-map-legend__dot is-rest"></i>
+                                    Rest
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                </section>
+
+                <section class="participation-history">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-heading__eyebrow">
+                                Participant History
+                            </p>
+
+                            <h2 class="section-heading__title">
+                                Participation History
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="history-panel">
+
+                        <div class="history-summary">
+
+                            <div>
+                                <span
+                                    class="history-summary__value"
+                                    id="history-total"
+                                >
+                                    —
+                                </span>
+
+                                <span class="history-summary__label">
+                                    Challenges Joined
+                                </span>
+                            </div>
+
+                            <div>
+                                <span
+                                    class="history-summary__value"
+                                    id="history-completed"
+                                >
+                                    —
+                                </span>
+
+                                <span class="history-summary__label">
+                                    Challenges Completed
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="history-list"
+                            id="history-list"
+                        >
+                            <p class="history-list__loading">
+                                Loading participation history...
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/supabase.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/api/challenges.js"></script>
+    <script src="../../assets/js/api/participants.js"></script>
+    <script src="./participant.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+/* ==================================================
+   BWamplerFit Admin Login
+================================================== */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f3ef 0%,
+            #efe7e1 50%,
+            #e8ddd6 100%
+        );
+
+    color: #1f2d3d;
+}
+
+.login {
+    width: 100%;
+    padding: 32px;
+}
+
+.login__card {
+    width: min(100%, 440px);
+    margin: 0 auto;
+
+    padding: 48px 44px;
+
+    background: #ffffff;
+
+    border: 1px solid
+        rgba(31, 45, 61, 0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 24px 60px
+        rgba(31, 45, 61, 0.12);
+}
+
+.login__brand {
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+.login__eyebrow {
+    margin: 0 0 10px;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #b46f89;
+}
+
+.login__title {
+    margin: 0;
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        2.7rem
+    );
+
+    line-height: 1.05;
+
+    color: #1f3a5f;
+}
+
+.login__intro {
+    max-width: 320px;
+    margin: 16px auto 0;
+
+    font-size: 0.98rem;
+    line-height: 1.65;
+
+    color: #66717f;
+}
+
+.login__form {
+    display: grid;
+    gap: 22px;
+}
+
+/* ==================================================
+   Fields
+================================================== */
+
+.form-field {
+    display: grid;
+    gap: 8px;
+}
+
+.form-field__label {
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    color: #344054;
+}
+
+.form-field__input {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    border:
+        1px solid
+        #d7dce2;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #1f2d3d;
+
+    font: inherit;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.form-field__input:focus {
+    outline: none;
+
+    border-color: #1f3a5f;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 58, 95, 0.12);
+}
+
+/* ==================================================
+   Login Message
+================================================== */
+
+.login__message {
+    min-height: 20px;
+    margin: -4px 0 -2px;
+
+    font-size: 0.86rem;
+    line-height: 1.4;
+
+    color: #b42318;
+}
+
+/* ==================================================
+   Button
+================================================== */
+
+.login__button {
+    width: 100%;
+    min-height: 50px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #1f3a5f;
+    color: #ffffff;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.login__button:hover {
+    background: #182f4e;
+
+    box-shadow:
+        0 10px 24px
+        rgba(31, 58, 95, 0.2);
+
+    transform: translateY(-1px);
+}
+
+.login__button:active {
+    transform: translateY(0);
+}
+
+.login__button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==================================================
+   Mobile
+================================================== */
+
+@media (max-width: 520px) {
+
+    .login {
+        padding: 20px;
+    }
+
+    .login__card {
+        padding: 38px 26px;
+    }
+
+}

@@ -1,0 +1,257 @@
+/* ==================================================
+   Admin Application Shell
+================================================== */
+
+.admin-page {
+    min-height: 100vh;
+    margin: 0;
+
+    background: #f6f4f1;
+    color: #1f2d3d;
+}
+
+.admin-shell {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+}
+
+
+/* ==================================================
+   Sidebar
+================================================== */
+.admin-sidebar {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #173a63 0%,
+            #102e50 100%
+        );
+
+    color: #ffffff;
+}
+.admin-sidebar__brand {
+    padding: 28px 22px 24px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+.admin-sidebar__brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 6px;
+}
+
+.admin-sidebar__brand-name {
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #f8c2d2;
+}
+
+.admin-sidebar__spark {
+    font-size: 0.58rem;
+
+    color: #f7a45b;
+}
+
+.admin-sidebar__title {
+    margin: 0;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.08;
+
+    color: #ffffff;
+}
+
+
+/* ==================================================
+   Navigation
+================================================== */
+
+.admin-nav {
+    display: grid;
+    gap: 6px;
+
+    margin-top: 28px;
+    padding: 28px 15px;
+}
+
+.admin-nav__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    text-decoration: none;
+
+    transition:
+        background 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.admin-nav__link:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    transform:
+        translateX(2px);
+}
+
+.admin-nav__link.is-active {
+    background:
+        linear-gradient(
+            90deg,
+            #f28cac,
+            #f7a45b
+        );
+
+    color: #173a63;
+
+    font-weight: 800;
+}
+
+
+/* ==================================================
+   Sidebar Footer
+================================================== */
+
+.admin-sidebar__footer {
+    margin-top: auto;
+
+    padding: 20px 15px 24px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+.admin-signout {
+    width: 100%;
+
+    min-height: 42px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.admin-signout:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+/* ==================================================
+   Main Application Area
+================================================== */
+
+.admin-main {
+    min-width: 0;
+
+    padding:
+        52px
+        clamp(32px, 5vw, 72px)
+        72px;
+}
+
+
+/* ==================================================
+   Tablet / Mobile
+================================================== */
+
+@media (max-width: 900px) {
+
+    .admin-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 22px 24px;
+    }
+
+    .admin-sidebar__brand {
+        padding: 0 0 18px;
+    }
+
+    .admin-nav {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        margin-top: 18px;
+    }
+
+    .admin-sidebar__footer {
+        margin-top: 18px;
+    }
+
+    .admin-signout {
+        width: auto;
+    }
+
+    .admin-main {
+        padding:
+            36px
+            24px
+            56px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .admin-main {
+        padding:
+            30px
+            18px
+            48px;
+    }
+
+}

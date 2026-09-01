@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Participants | BWamplerFit</title>
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/variables.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/base.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/layout.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+    <link
+        rel="stylesheet"
+        href="./participants.css"
+    >
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-shell">
+
+        <aside
+            class="admin-sidebar"
+            id="admin-sidebar"
+        ></aside>
+
+
+        <main class="admin-main">
+
+            <div class="participants-page">
+
+                <header class="participants-header">
+
+                    <div>
+
+                        <p class="participants-header__eyebrow">
+                            Community
+                        </p>
+
+                        <h1 class="participants-header__title">
+                            Participants
+                        </h1>
+
+                        <p class="participants-header__intro">
+                            View participation history across
+                            all BWamplerFit challenges.
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <section
+                    class="participants-summary"
+                    aria-label="Participant summary"
+                >
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Total Participants
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="total-participants"
+                        >
+                            —
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Repeat Participants
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="repeat-participants"
+                        >
+                            —
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Challenge Completions
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="challenge-completions"
+                        >
+                            —
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+                <section class="participants-directory">
+
+                    <div class="participants-directory__header">
+
+                        <div>
+
+                            <p class="section-heading__eyebrow">
+                                Participant Directory
+                            </p>
+
+                            <h2 class="section-heading__title">
+                                All Participants
+                            </h2>
+
+                        </div>
+
+                        <div class="participant-filters"
+                            aria-label="Participant filters"
+                        >
+                            <button
+                                type="button"
+                                class="participant-filter is-active"
+                                data-filter="all"
+                            >
+                                All
+                            </button>
+
+                            <button
+                                type="button"
+                                class="participant-filter"
+                                data-filter="current"
+                            >
+                                Current
+                            </button>
+
+                            <button
+                                type="button"
+                                class="participant-filter"
+                                data-filter="past"
+                            >
+                                Past Participants
+                            </button>
+
+                            <button
+                                type="button"
+                                class="participant-filter"
+                                data-filter="repeat"
+                            >
+                                Repeat
+                            </button>
+
+                            <button
+                                type="button"
+                                class="participant-filter"
+                                data-filter="finisher"
+                            >
+                                Finishers
+                            </button>
+
+                            <button
+                                type="button"
+                                class="participant-filter"
+                                data-filter="multi-finisher"
+                            >
+                                Multi-Finishers
+                            </button>
+                        </div>
+
+                        <div class="participant-search">
+
+                            <label
+                                for="participant-search"
+                                class="sr-only"
+                            >
+                                Search participants
+                            </label>
+
+                            <input
+                                type="search"
+                                id="participant-search"
+                                class="participant-search__input"
+                                placeholder="Search by email..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="participants-table">
+
+                        <div class="participants-table__header">
+
+                            <span>Participant</span>
+                            <span>Type</span>
+                            <span>Challenges</span>
+                            <span>Completed</span>
+                            <span>Last Participated</span>
+                            <span></span>
+
+                        </div>
+
+                        <div
+                            class="participants-table__body"
+                            id="participants-table-body"
+                        >
+
+                            <p class="participants-table__loading">
+                                Loading participants...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/supabase.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/api/challenges.js"></script>
+    <script src="../../assets/js/api/participants.js"></script>
+    <script src="../../assets/js/components/sidebar.js"></script>
+    <script src="./participants.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Challenge Details | BWamplerFit</title>
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./challenge.css"
+    >
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-shell">
+
+        <aside
+            class="admin-sidebar"
+            id="admin-sidebar"
+        ></aside>
+
+
+        <main class="admin-main">
+
+            <div class="challenge-page">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="challenge-back-link"
+                >
+                    ← Back to Challenges
+                </a>
+
+
+                <header class="challenge-header">
+
+                    <div>
+
+                        <p class="challenge-header__eyebrow">
+                            Challenge
+                        </p>
+
+                        <h1
+                            class="challenge-header__title"
+                            id="challenge-name"
+                        >
+                            Loading challenge...
+                        </h1>
+
+                        <p
+                            class="challenge-header__dates"
+                            id="challenge-dates"
+                        >
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="challenge-status"
+                        id="challenge-status"
+                    >
+                    </span>
+
+                </header>
+
+
+                <section
+                    class="challenge-summary"
+                    aria-label="Challenge summary"
+                >
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Duration
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="challenge-days"
+                        >
+                            —
+                        </p>
+
+                        <p class="summary-card__support">
+                            Days
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Activities
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="challenge-activities"
+                        >
+                            —
+                        </p>
+
+                        <p class="summary-card__support">
+                            Total
+                        </p>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <p class="summary-card__label">
+                            Participants
+                        </p>
+
+                        <p
+                            class="summary-card__value"
+                            id="challenge-participants"
+                        >
+                            —
+                        </p>
+
+                        <p class="summary-card__support">
+                            Enrolled
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+                <section class="challenge-participant-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-heading__eyebrow">
+                                Participant Progress
+                            </p>
+
+                            <h2 class="section-heading__title">
+                                Challenge Participants
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="participant-table">
+
+                        <div class="participant-table__header">
+
+                            <span>
+                                Participant
+                            </span>
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <span>
+                                Status
+                            </span>
+
+                            <span></span>
+
+                        </div>
+
+                        <div
+                            class="participant-table__body"
+                            id="participant-table-body"
+                        >
+
+                            <p class="participant-table__loading">
+                                Loading participants...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/supabase.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/api/challenges.js"></script>
+    <script src="../../assets/js/components/sidebar.js"></script>
+    <script src="./challenge.js"></script>
+
+</body>
+
+</html>

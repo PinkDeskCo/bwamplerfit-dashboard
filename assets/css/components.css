@@ -1,0 +1,54 @@
+.summary-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 24px;
+
+    background: var(--color-card);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-medium);
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+.summary-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: var(--color-pink);
+}
+
+.summary-card__value {
+    margin: 8px 0 0;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    color: var(--color-navy);
+}
+
+.summary-card__label {
+    margin: 0;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: var(--color-text-soft);
+}

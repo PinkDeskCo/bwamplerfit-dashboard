@@ -1,0 +1,379 @@
+/* ==================================================
+   Dashboard Header
+================================================== */
+
+.dashboard-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+
+    max-width: 1280px;
+    margin: 0 auto 42px;
+}
+
+.dashboard-header__eyebrow {
+    margin: 0 0 8px;
+
+    font-size: 0.74rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #b46f89;
+}
+
+.dashboard-header__title {
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+
+    color: #1f3a5f;
+}
+
+.dashboard-header__intro {
+    margin: 12px 0 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: #66717f;
+}
+
+
+/* ==================================================
+   Summary Cards
+================================================== */
+
+.dashboard-summary {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    max-width: 1280px;
+    margin: 0 auto 54px;
+}
+
+.dashboard-summary
+.summary-card:nth-child(1)::before {
+    background: var(--color-pink);
+}
+
+.dashboard-summary
+.summary-card:nth-child(2)::before {
+    background: var(--color-orange);
+}
+
+.dashboard-summary
+.summary-card:nth-child(3)::before {
+    background: var(--color-navy);
+}
+
+.summary-card {
+    min-width: 0;
+    padding: 26px 28px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(31, 58, 95, 0.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(31, 45, 61, 0.05);
+}
+
+.summary-card__label {
+    margin: 0 0 12px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #7a8490;
+}
+
+.summary-card__value {
+    margin: 0;
+
+    font-size: 2.1rem;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #1f3a5f;
+}
+
+
+/* ==================================================
+   Challenge Section
+================================================== */
+
+.dashboard-challenges {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.section-heading__eyebrow {
+    margin: 0 0 6px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #b46f89;
+}
+
+.section-heading__title {
+    margin: 0;
+
+    font-size: 1.55rem;
+
+    color: #1f3a5f;
+}
+
+/* ==================================================
+   Challenge Cards
+================================================== */
+
+.challenge-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(300px, 420px)
+        );
+
+    gap: 24px;
+}
+
+
+.challenge-card {
+    overflow: hidden;
+
+    background: #fffaf2;
+
+    border:
+        1px solid
+        rgba(23, 58, 99, 0.1);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 28px
+        rgba(23, 58, 99, 0.07);
+}
+
+
+/* ==================================================
+   Challenge Artwork
+================================================== */
+
+.challenge-card__art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 125px;
+
+    padding: 18px 24px 4px;
+}
+.challenge-card__image {
+      display: block;
+
+    width: auto;
+    max-width: 135px;
+    max-height: 110px;
+}
+/* ==================================================
+   Challenge Content
+================================================== */
+
+.challenge-card__content {
+    padding: 20px 26px 24px;
+}
+
+.challenge-card__status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 27px;
+
+    padding: 0 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.challenge-card__status--active {
+    background:
+        rgba(242, 140, 172, 0.2);
+
+    color: #a64264;
+}
+
+.challenge-card__status--upcoming {
+    background:
+        rgba(247, 164, 91, 0.2);
+
+    color: #aa6429;
+}
+
+.challenge-card__status--completed {
+    background:
+        rgba(23, 58, 99, 0.1);
+
+    color: #173a63;
+}
+
+
+/* ==================================================
+   Challenge Heading
+================================================== */
+
+.challenge-card__heading {
+    margin-top: 18px;
+}
+
+.challenge-card__eyebrow {
+    margin: 0 0 5px;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+
+    color: #e37c5d;
+}
+
+.challenge-card__title {
+    margin: 0;
+
+    font-size: 1.4rem;
+    line-height: 1.15;
+
+    color: #173a63;
+}
+
+.challenge-card__meta {
+    margin: 9px 0 0;
+
+    font-size: 0.84rem;
+
+    color: #6f7985;
+}
+
+
+/* ==================================================
+   Footer
+================================================== */
+
+.challenge-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-top: 28px;
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(23, 58, 99, 0.09);
+}
+
+.challenge-card__participants {
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    color: #596472;
+}
+
+.challenge-card__link {
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    color: #173a63;
+
+    text-decoration: none;
+}
+
+.challenge-card__link:hover {
+    color: #ef4565;
+}
+
+
+/* ==================================================
+   Responsive
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .dashboard-header {
+        margin-bottom: 32px;
+    }
+
+    .dashboard-summary {
+        gap: 14px;
+        margin-bottom: 42px;
+    }
+
+    .summary-card {
+        padding: 22px;
+    }
+
+    .challenge-card {
+        min-height: 220px;
+        padding: 24px;
+    }
+
+    .challenge-card__footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

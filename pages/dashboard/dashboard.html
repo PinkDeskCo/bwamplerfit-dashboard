@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BWamplerFit Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/variables.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/base.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/layout.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+    <link
+        rel="stylesheet"
+        href="./dashboard.css"
+    >
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-shell">
+
+        <!-- ==========================================
+             Sidebar
+        =========================================== -->
+
+        <!-- <aside class="admin-sidebar">
+
+            <div class="admin-sidebar__brand">
+
+                <div class="admin-sidebar__brand-mark">
+                    <span class="admin-sidebar__spark">
+                        ✦
+                    </span>
+
+                    <span class="admin-sidebar__brand-name">
+                        BWamplerFit
+                    </span>
+
+                    <span class="admin-sidebar__spark">
+                        ✦
+                    </span>
+                </div>
+
+                <p class="admin-sidebar__title">
+                    Challenge Dashboard
+                </p>
+
+            </div>
+            
+            <nav
+                class="admin-nav"
+                aria-label="Admin navigation"
+            >
+
+                <a
+                    href="./dashboard.html"
+                    class="admin-nav__link is-active"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="../participants/participants.html"
+                    class="admin-nav__link"
+                >
+                    Participants
+                </a>
+
+            </nav>
+
+            <div class="admin-sidebar__footer">
+
+                <button
+                    type="button"
+                    class="admin-signout"
+                    id="logout-button"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+        </aside> -->
+
+            <aside
+                class="admin-sidebar"
+                id="admin-sidebar"
+            ></aside>
+
+        <!-- ==========================================
+             Main Content
+        =========================================== -->
+
+        <main class="admin-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="dashboard-header__eyebrow">
+                        Overview
+                    </p>
+
+                    <h1 class="dashboard-header__title">
+                        Challenges
+                    </h1>
+
+                    <p class="dashboard-header__intro">
+                        Manage BWamplerFit challenges
+                        and participant progress.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- ======================================
+                 Summary
+            ======================================= -->
+
+            <section
+                class="dashboard-summary"
+                aria-label="Challenge summary"
+            >
+
+                <article class="summary-card">
+
+                    <p class="summary-card__label">
+                        Total Challenges
+                    </p>
+
+                    <p
+                        class="summary-card__value"
+                        id="total-challenges"
+                    >
+                        &mdash;
+                    </p>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <p class="summary-card__label">
+                        Active Challenges
+                    </p>
+
+                    <p
+                        class="summary-card__value"
+                        id="active-challenges"
+                    >
+                        &mdash;
+                    </p>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <p class="summary-card__label">
+                        Total Participants
+                    </p>
+
+                    <p
+                        class="summary-card__value"
+                        id="total-participants"
+                    >
+                        &mdash;
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- ======================================
+                 Challenge List
+            ======================================= -->
+
+           <section
+                class="challenge-library"
+                id="challenges"
+            >
+
+                <div
+                    class="challenge-grid"
+                    id="challenge-grid"
+                >
+
+                    <p class="challenge-grid__loading">
+                        Loading challenges...
+                    </p>
+
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================
+         Scripts
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/supabase.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/api/challenges.js"></script>
+    <script src="../../assets/js/components/sidebar.js"></script>
+    <script src="./dashboard.js"></script>
+
+</body>
+
+</html>
