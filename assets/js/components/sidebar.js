@@ -9,6 +9,18 @@ function renderAdminSidebar(activePage) {
         return;
     }
 
+    const isChallengeAnchor =
+        window.location.hash ===
+        "#challenges";
+
+    const dashboardIsActive =
+        activePage === "dashboard" &&
+        !isChallengeAnchor;
+
+    const challengesIsActive =
+        activePage === "challenges" ||
+        isChallengeAnchor;
+
     sidebar.innerHTML = `
         <div class="admin-sidebar__brand">
 
@@ -43,7 +55,7 @@ function renderAdminSidebar(activePage) {
                 href="../dashboard/dashboard.html"
                 class="
                     admin-nav__link
-                    ${activePage === "dashboard"
+                    ${dashboardIsActive
                         ? "is-active"
                         : ""}
                 "
@@ -55,7 +67,7 @@ function renderAdminSidebar(activePage) {
                 href="../dashboard/dashboard.html#challenges"
                 class="
                     admin-nav__link
-                    ${activePage === "challenges"
+                    ${challengesIsActive
                         ? "is-active"
                         : ""}
                 "
