@@ -12,7 +12,7 @@ async function initializeChallengePage() {
     }
 
     renderAdminSidebar(
-        "participants"
+        "challenges"
     );
     initializeLogout();
 
