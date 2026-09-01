@@ -1,4 +1,4 @@
-console.log("Is sidebar working?", true);
+
 
 function renderAdminSidebar(activePage) {
 
