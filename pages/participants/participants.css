@@ -617,3 +617,28 @@
     }
 
 }
+@media (max-width: 900px) {
+
+    .participants-directory__header {
+        display: flex;
+        flex-direction: column;
+
+        gap: 18px;
+
+        align-items: stretch;
+    }
+
+    .participant-filters {
+        width: 100%;
+    }
+
+    .participant-search {
+        width: 100%;
+        max-width: none;
+    }
+
+    .participant-search__input {
+        width: 100%;
+    }
+
+}
