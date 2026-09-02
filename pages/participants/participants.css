@@ -530,6 +530,24 @@
 
     .participants-table__header {
         display: none;
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        align-items: stretch;
+    }
+    .participant-filters {
+        width: 100%;
+    }
+    .participant-filter {
+        min-height: 40px;
+
+        padding: 0 14px;
+    }
+
+    .participant-search {
+        width: 100%;
+        max-width: none;
     }
 
     .participants-row {
