@@ -1,4 +1,4 @@
-console.log ('fixed an error')
+console.log ('fixing participant mobile')
 
 /* ==================================================
    Dashboard

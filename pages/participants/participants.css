@@ -518,12 +518,67 @@
 @media (max-width: 900px) {
 
     .participants-table {
-        overflow-x: auto;
+        overflow: visible;
+
+        background: transparent;
+
+        border: 0;
+        border-radius: 0;
+
+        box-shadow: none;
     }
 
-    .participants-table__header,
+    .participants-table__header {
+        display: none;
+    }
+
     .participants-row {
-        min-width: 900px;
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+
+        gap: 10px 16px;
+
+        min-width: 0;
+        min-height: 0;
+
+        margin-bottom: 14px;
+        padding: 18px;
+
+        background: #ffffff;
+
+        border:
+            1px solid
+            rgba(31, 58, 95, 0.08);
+
+        border-radius: 16px;
+
+        box-shadow:
+            0 6px 18px
+            rgba(31, 58, 95, 0.05);
+    }
+
+    .participants-row__email {
+        grid-column: 1 / -1;
+
+        overflow: visible;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .participants-row__labels {
+        grid-column: 1 / -1;
+    }
+
+    .participants-row__number,
+    .participants-row__date {
+        font-size: 0.8rem;
+    }
+
+    .participants-row__link {
+        justify-self: end;
+        align-self: center;
     }
 
 }
