@@ -1,4 +1,4 @@
-
+console.log('b.wamplerfit')
 
 function renderAdminSidebar(activePage) {
 
@@ -33,7 +33,7 @@ function renderAdminSidebar(activePage) {
                 </span>
 
                 <span class="admin-sidebar__brand-name">
-                    BWamplerFit
+                    B.WamplerFit
                 </span>
 
                 <span class="admin-sidebar__spark">
