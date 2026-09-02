@@ -200,7 +200,6 @@
 /* ==================================================
    Tablet / Mobile
 ================================================== */
-
 @media (max-width: 900px) {
 
     .admin-shell {
@@ -212,6 +211,7 @@
 
         width: 100%;
         height: auto;
+        min-height: 0;
 
         padding: 22px 24px;
     }
@@ -221,18 +221,33 @@
     }
 
     .admin-nav {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+
+        gap: 8px;
 
         margin-top: 18px;
+        padding: 18px 0;
+    }
+
+    .admin-nav__link {
+        width: 100%;
     }
 
     .admin-sidebar__footer {
-        margin-top: 18px;
+        margin-top: 0;
+
+        padding:
+            18px
+            0
+            0;
     }
 
     .admin-signout {
         width: auto;
+
+        padding:
+            0
+            18px;
     }
 
     .admin-main {
@@ -243,7 +258,6 @@
     }
 
 }
-
 
 @media (max-width: 520px) {
 
