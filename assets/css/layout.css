@@ -255,8 +255,9 @@
    .admin-main {
         width: 100%;
         min-width: 0;
+            max-width: 100%;
 
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
 
         padding:
             36px

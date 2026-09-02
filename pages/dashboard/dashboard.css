@@ -332,6 +332,77 @@
 /* ==================================================
    Responsive
 ================================================== */
+@media (max-width: 1100px) {
+
+    .dashboard-header,
+    .dashboard-summary,
+    .dashboard-challenges,
+    .challenge-library {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .dashboard-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-summary
+    .summary-card:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .challenge-card {
+        width: 100%;
+        max-width: 520px;
+        min-width: 0;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-summary
+    .summary-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .dashboard-header {
+        margin-bottom: 32px;
+    }
+
+    .dashboard-summary {
+        gap: 14px;
+        margin-bottom: 42px;
+    }
+
+    .summary-card {
+        padding: 22px;
+    }
+
+    .challenge-card__footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
 
 @media (max-width: 1000px) {
 
