@@ -1,4 +1,4 @@
-console.log('b.wamplerfit')
+console.log('COMPLETED')
 
 function renderAdminSidebar(activePage) {
 
