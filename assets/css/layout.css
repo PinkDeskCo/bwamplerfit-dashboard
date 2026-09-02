@@ -252,13 +252,17 @@
             18px;
     }
 
-    .admin-main {
+   .admin-main {
+        width: 100%;
+        min-width: 0;
+
+        overflow-x: hidden;
+
         padding:
             36px
             24px
             56px;
     }
-
 }
 
 @media (max-width: 520px) {
