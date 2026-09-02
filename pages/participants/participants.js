@@ -1,5 +1,5 @@
 
-console.log("page is loading")
+console.log("testing media for participants")
 /* ==================================================
    Participants Directory
 ================================================== */
