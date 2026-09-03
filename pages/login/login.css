@@ -48,6 +48,19 @@
     text-align: center;
 }
 
+.admin-login__logo-wrap {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+.admin-login__logo {
+    display: block;
+
+    width: 90px;
+    height: auto;
+}
 .login__eyebrow {
     margin: 0 0 10px;
 
