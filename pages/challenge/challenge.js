@@ -312,86 +312,174 @@ function renderParticipants(
             )
             .join("");
 }
-function createParticipantRow(
-    record,
-    challenge
-) {
+function createParticipantRow(record, challenge) {
+    const escapeHTML = (value) => String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
 
-    const participant =
-        record.challenge_participants;
+    const participant = record.challenge_participants;
 
     const email =
-        participant?.email ??
-        "Unknown participant";
+        participant?.email ?? "Unknown participant";
 
-    const completedActivities =
-        getCompletedActivityCount(
-            record.progress
+    const isTurkeyTrot =
+        challenge.challenge_key === "turkey-trot-2026-11";
+
+    let percentage;
+    let status;
+    let details = "";
+
+    if (isTurkeyTrot) {
+        const monthlyGoal = 300000;
+        const dailyGoal = 10000;
+        const totalDays = Number(challenge.total_days) || 30;
+
+        let steps = 0;
+        let feathers = 0;
+        let miniChallenges = 0;
+        let hasEntry = false;
+
+        const now = new Date();
+
+        const today = [
+            now.getFullYear(),
+            String(now.getMonth() + 1).padStart(2, "0"),
+            String(now.getDate()).padStart(2, "0")
+        ].join("-");
+
+        for (let day = 1; day <= totalDays; day++) {
+            const date = new Date(
+                `${challenge.start_date}T12:00:00`
+            );
+
+            date.setDate(date.getDate() + day - 1);
+
+            const dateKey = [
+                date.getFullYear(),
+                String(date.getMonth() + 1).padStart(2, "0"),
+                String(date.getDate()).padStart(2, "0")
+            ].join("-");
+
+            if (dateKey > today) {
+                continue;
+            }
+
+            const entry = record.progress?.[day];
+            const dailySteps = entry?.steps;
+
+            if (
+                Number.isSafeInteger(dailySteps) &&
+                dailySteps >= 0
+            ) {
+                hasEntry = true;
+                steps += dailySteps;
+
+                if (dailySteps >= dailyGoal) {
+                    feathers++;
+                }
+            }
+
+            if (
+                date.getDay() === 3 &&
+                entry?.tasks?.mini_challenge === true
+            ) {
+                miniChallenges++;
+            }
+        }
+
+        percentage = Math.min(
+            100,
+            Math.floor(steps / monthlyGoal * 100)
         );
 
-    const percentage =
-        challenge.total_activities
+        status = steps >= monthlyGoal
+            ? "Completed"
+            : hasEntry || miniChallenges > 0
+                ? "In Progress"
+                : "Not Started";
+
+        details = `
+            <small
+                style="
+                    display: block;
+                    margin-top: 6px;
+                    line-height: 1.6;
+                "
+            >
+                ${steps.toLocaleString("en-US")} / 300,000 steps
+                <br>
+                ${feathers} / ${totalDays} feathers
+                ·
+                ${miniChallenges} / 4 Wednesday challenges
+            </small>
+        `;
+    } else {
+        const completedActivities =
+            getCompletedActivityCount(record.progress);
+
+        percentage = challenge.total_activities
             ? Math.round(
-                (
-                    completedActivities /
-                    challenge.total_activities
-                ) * 100
+                completedActivities /
+                challenge.total_activities * 100
             )
             : 0;
 
-    const status =
-        getParticipantStatus(
+        status = getParticipantStatus(
             record,
             percentage
         );
+    }
+
+    const barPercentage = Math.max(
+        0,
+        Math.min(percentage, 100)
+    );
+
+    const href =
+        "../participant/participant.html" +
+        `?id=${encodeURIComponent(record.participant_id)}` +
+        `&challenge=${encodeURIComponent(challenge.id)}`;
 
     return `
         <div class="participant-row">
-
             <div class="participant-row__person">
-
                 <span class="participant-row__email">
-                    ${email}
+                    ${escapeHTML(email)}
                 </span>
 
+                ${details}
             </div>
 
             <div class="participant-row__progress">
-
                 <div class="progress-bar">
-
                     <span
                         class="progress-bar__fill"
-                        style="width: ${percentage}%"
+                        style="width: ${barPercentage}%"
                     ></span>
-
                 </div>
 
                 <span class="participant-row__percentage">
                     ${percentage}%
                 </span>
-
             </div>
 
             <div>
-
                 <span class="participant-row__status">
                     ${status}
                 </span>
-
             </div>
 
             <div class="participant-row__action">
-
                 <a
-                    href="../participant/participant.html?id=${record.participant_id}&challenge=${challenge.id}"
+                    href="${escapeHTML(href)}"
                     class="participant-row__link"
                 >
                     View →
                 </a>
-
             </div>
-
         </div>
     `;
 }
